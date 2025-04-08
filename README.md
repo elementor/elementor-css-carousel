@@ -13,7 +13,7 @@ This plugin uses the modern CSS Carousel component to demonstrate what's possibl
 
 Want to play around with Elementor and this demo Carousel without installing anything? You can experiment as much as you'd like on the Elementor Playground:
 
-👉 [Elementor CSS Carousel Playground](https://playground.elementor.com/demo/css-carousels/)
+👉 [Elementor CSS Carousel Playground](https://elemn.to/playground-css-carousels)
 
 ## Usage
 
@@ -24,7 +24,7 @@ Want to play around with Elementor and this demo Carousel without installing any
 
 ## Requirements
 
-- Elementor plugin installed and activated.
+- [Elementor plugin](https://elemn.to/css-carousels-elementor-wp-repo) installed and activated.
 - Latest version of Chrome for full feature support.
 
 ## ⚠️ Important Notes
