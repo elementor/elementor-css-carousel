@@ -21,6 +21,7 @@
 
 	>* {
 		scroll-snap-align: center;
+		scroll-snap-stop: always;
 
 		img {
 			display: block;
