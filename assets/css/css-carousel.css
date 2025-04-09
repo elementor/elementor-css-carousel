@@ -1,0 +1,106 @@
+.carousel {
+	anchor-name: var(--carousel-anchor-name);
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: var(--slide-width);
+	gap: var(--slides-gap, 0);
+
+	scroll-snap-type: inline mandatory;
+	scroll-snap-stop: always;
+	scroll-behavior: smooth;
+	scroll-padding: 0;
+	scrollbar-width: none;
+
+	overflow-x: auto;
+	overscroll-behavior-inline: contain;
+
+	list-style-type: none;
+	counter-reset: item;
+	padding: 0;
+	margin: 0;
+
+	>* {
+		scroll-snap-align: center;
+
+		img {
+			display: block;
+			width: var(--slide-width);
+			height: var(--slide-height);
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+
+	&.scroll-buttons {
+		&::scroll-button(*) {
+			position-anchor: var(--carousel-anchor-name);
+
+			position: fixed;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+
+			background-size: cover;
+			background-position: center center;
+		}
+
+		&::scroll-button(inline-start) {
+			content: "" / var(--scroll-button-start-label);
+			width: var(--scroll-button-start-width, 40px);
+			height: var(--scroll-button-start-height, 40px);
+			margin: var(--scroll-button-start-spacing, 0);
+			background-image: var(--scroll-button-start-image);
+			position-area: var(--scroll-button-start-position-inline, inline-start) var(--scroll-button-start-position-block, center);
+		}
+
+		&::scroll-button(inline-end) {
+			content: "" / var(--scroll-button-end-label);
+			width: var(--scroll-button-end-width, 40px);
+			height: var(--scroll-button-end-height, 40px);
+			margin: var(--scroll-button-end-spacing, 0);
+			background-image: var(--scroll-button-end-image);
+			position-area: var(--scroll-button-end-position-inline, inline-end) var(--scroll-button-end-position-block, center);
+		}
+	}
+
+	&.scroll-markers {
+		scroll-marker-group: after;
+
+		&::scroll-marker-group {
+			position-anchor: var(--carousel-anchor-name);
+
+			position: fixed;
+			position-area: var(--scroll-marker-group-position, block-end);
+			margin: var(--scroll-marker-group-spacing, 10px);
+
+			display: grid;
+			align-items: center;
+			grid-auto-flow: column;
+			grid-auto-columns: var(--scroll-marker-width, 8px);
+			gap: var(--scroll-marker-group-gap, 10px);
+		}
+
+		&>*::scroll-marker {
+			content: ' ';
+			width: var(--scroll-marker-width, 8px);
+			height: var(--scroll-marker-height, 8px);
+			border-radius: 50%;
+			border: 1px solid black;
+			cursor: pointer;
+		}
+
+		&>*::scroll-marker:target-current {
+			background-color: var(--scroll-marker-current-bg, black);
+		}
+
+		&.scroll-markers-image {
+
+			&>*::scroll-marker {
+				background-image: var(--marker-img);
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}
