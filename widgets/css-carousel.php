@@ -455,6 +455,24 @@ class CSS_Carousel_Widget extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
+			'scroll_button_start_disable_state_opacity',
+			[
+				'label' => esc_html__( 'Disable state opacity', 'elementor-carousels' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'max' => 1,
+						'min' => 0.0,
+						'step' => 0.01,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .carousel.scroll-buttons' => '--scroll-button-start-disabled-opacity: {{SIZE}};',
+				],
+			]
+		);
+
+		$this->add_control(
 			'scroll_button_end_position_heading',
 			[
 				'type' => \Elementor\Controls_Manager::HEADING,
@@ -591,6 +609,24 @@ class CSS_Carousel_Widget extends \Elementor\Widget_Base {
 				],
 				'condition' => [
 					'scroll_buttons' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
+			'scroll_button_end_disable_state_opacity',
+			[
+				'label' => esc_html__( 'Disable state opacity', 'elementor-carousels' ),
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'max' => 1,
+						'min' => 0.0,
+						'step' => 0.01,
+					],
+				],
+				'selectors' => [
+					'{{WRAPPER}} .carousel.scroll-buttons' => '--scroll-button-end-disabled-opacity: {{SIZE}};',
 				],
 			]
 		);

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Elementor Carousels
  * Description: Pure CSS carousel widgets for Elementor.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author:  Rami Yushuvaev
  * Author URI: https://ChartsCSS.org/
  * Requires Plugins: elementor

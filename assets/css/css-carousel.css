@@ -45,6 +45,10 @@
 			background-position: center center;
 		}
 
+		&::scroll-button(*):disabled {
+			cursor: unset;
+		}
+
 		&::scroll-button(inline-start) {
 			content: "" / var(--scroll-button-start-label);
 			width: var(--scroll-button-start-width, 40px);
@@ -54,6 +58,10 @@
 			position-area: var(--scroll-button-start-position-inline, inline-start) var(--scroll-button-start-position-block, center);
 		}
 
+		&::scroll-button(inline-start):disabled {
+			opacity: var(--scroll-button-start-disabled-opacity, 0.5);
+		}
+
 		&::scroll-button(inline-end) {
 			content: "" / var(--scroll-button-end-label);
 			width: var(--scroll-button-end-width, 40px);
@@ -61,6 +69,10 @@
 			margin: var(--scroll-button-end-spacing, 0);
 			background-image: var(--scroll-button-end-image);
 			position-area: var(--scroll-button-end-position-inline, inline-end) var(--scroll-button-end-position-block, center);
+		}
+
+		&::scroll-button(inline-end):disabled {
+			opacity: var(--scroll-button-end-disabled-opacity, 0.5);
 		}
 	}
 
